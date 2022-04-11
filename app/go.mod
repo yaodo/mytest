@@ -1,2 +1,2 @@
-module app.go
+module app
 go 1.18
