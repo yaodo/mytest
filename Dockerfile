@@ -4,7 +4,7 @@ RUN apk --no-cache add git
 
 WORKDIR /go/src/
 
-RUN go get -d -v github.com/go-sql-driver/mysql
+
 
 COPY . .
 
