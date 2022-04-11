@@ -1,3 +1,3 @@
-module mytest
+module myapp
 
 go 1.18
