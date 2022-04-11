@@ -1,9 +1,9 @@
-FROM golang:1.18 as builder
+FROM golang as builder
 RUN mkdir /app
 WORKDIR /app
 COPY . .
-RUN GOOS=linux GOARCH=amd64  go build .
+RUN CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build .
 FROM scratch as final
-COPY --from=builder /app/myapp .
+COPY --from=builder /app/publish .
 CMD ["./myapp"]
 
