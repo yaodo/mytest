@@ -8,7 +8,8 @@ WORKDIR /go/src/
 
 COPY . .
 
-RUN CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo -o app .
+RUN CGO_ENABLED=0 GOOS=linux 
+RUN go build  -o app .
 
 FROM alpine:latest as prod
 
